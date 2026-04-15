@@ -3,7 +3,6 @@ import Header from './components/Header';
 import Hero from './components/Hero';
 import Experienced from './components/Experienced';
 import Newcomer from './components/Newcomer';
-import ComparisonTable from './components/ComparisonTable';
 import Flow from './components/Flow';
 import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
@@ -68,7 +67,6 @@ export default function App() {
       <main>
         <Hero />
         <Experienced />
-        <ComparisonTable />
         <Newcomer />
         <Flow />
         <Pricing />
