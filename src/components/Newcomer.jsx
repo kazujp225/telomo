@@ -85,10 +85,7 @@ export default function Newcomer() {
               </div>
 
               {/* 見出し - 大きめ */}
-              <h3
-                className="relative text-[22px] sm:text-[26px] lg:text-[28px] font-black text-black leading-[1.3] mb-4"
-                style={{ whiteSpace: 'pre-line' }}
-              >
+              <h3 className="relative text-[22px] sm:text-[26px] lg:text-[28px] font-black text-black leading-[1.3] mb-4 whitespace-normal sm:whitespace-pre-line">
                 {s.heading}
               </h3>
 

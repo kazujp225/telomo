@@ -42,9 +42,9 @@ export default function ComparisonTable() {
           費用・コール数・透明性・契約条件の4指標で総合評価しました。
         </p>
 
-        <div className="fade-in overflow-x-auto">
-          <table className="w-full border-collapse min-w-[720px]">
-            {/* ヘッダー: ランク + 社名 */}
+        {/* Desktop: テーブル表示 (md以上) */}
+        <div className="fade-in hidden md:block">
+          <table className="w-full border-collapse">
             <thead>
               <tr>
                 <th className="bg-[#fafafa] border border-[#e5e5e5] p-4 sm:p-5 text-center w-[16%]">
@@ -59,12 +59,7 @@ export default function ComparisonTable() {
                         : 'bg-white border-[#e5e5e5] w-[24%]'
                     }`}
                   >
-                    {c.isUs && (
-                      <p className="bg-black text-white text-[10px] font-black tracking-[0.2em] px-4 py-1.5 inline-block mb-2">
-                        {c.badge}
-                      </p>
-                    )}
-                    <div className="flex items-center justify-center mb-1">
+                    <div className="flex items-center justify-center mb-2">
                       <span
                         className={`text-[22px] sm:text-[28px] font-black leading-none ${
                           c.isUs ? 'text-white' : 'text-[#666]'
@@ -73,13 +68,6 @@ export default function ComparisonTable() {
                         {c.rank}<span className="text-[12px] sm:text-[14px] ml-0.5">位</span>
                       </span>
                     </div>
-                    <p
-                      className={`text-[11px] tracking-[0.15em] font-bold ${
-                        c.isUs ? 'text-white/70' : 'text-[#bbb]'
-                      }`}
-                    >
-                      {c.isUs ? 'OUR SERVICE' : 'COMPANY'}
-                    </p>
                     <p
                       className={`text-[20px] sm:text-[24px] font-black ${
                         c.isUs ? 'text-white' : 'text-[#666]'
@@ -92,7 +80,6 @@ export default function ComparisonTable() {
               </tr>
             </thead>
 
-            {/* ボディ */}
             <tbody>
               {rows.map((r, i) => (
                 <tr key={i}>
@@ -126,6 +113,61 @@ export default function ComparisonTable() {
               ))}
             </tbody>
           </table>
+        </div>
+
+        {/* Mobile: 会社ごとのカード表示 (md未満) */}
+        <div className="fade-in md:hidden space-y-5">
+          {columns.map((c, ci) => (
+            <div
+              key={ci}
+              className={`bg-white border overflow-hidden ${
+                c.isUs ? 'border-[#f55f00] shadow-[0_12px_30px_rgba(245,95,0,0.15)]' : 'border-[#e5e5e5]'
+              }`}
+            >
+              {/* カードヘッダー */}
+              <div className={`px-5 py-5 ${c.isUs ? 'bg-[#f55f00]' : 'bg-[#fafafa]'}`}>
+                <div className="flex items-baseline gap-2">
+                  <span
+                    className={`text-[32px] font-black leading-none ${
+                      c.isUs ? 'text-white' : 'text-[#666]'
+                    }`}
+                  >
+                    {c.rank}<span className="text-[14px] ml-0.5">位</span>
+                  </span>
+                  <span
+                    className={`text-[22px] font-black leading-none ${
+                      c.isUs ? 'text-white' : 'text-[#333]'
+                    }`}
+                  >
+                    {c.name}
+                  </span>
+                </div>
+              </div>
+
+              {/* スペック */}
+              <dl className="divide-y divide-[#eee]">
+                {rows.map((r, ri) => (
+                  <div
+                    key={ri}
+                    className={`flex items-center justify-between gap-3 px-5 py-3.5 ${
+                      c.isUs ? 'bg-[#fff8f2]' : 'bg-white'
+                    }`}
+                  >
+                    <dt className="text-[13px] font-bold text-[#888] tracking-[0.02em] shrink-0">
+                      {r.item}
+                    </dt>
+                    <dd
+                      className={`text-right text-[15px] font-black leading-tight ${
+                        c.isUs ? 'text-[#f55f00]' : 'text-[#555]'
+                      }`}
+                    >
+                      {r.values[ci]}
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          ))}
         </div>
 
         <p className="text-[14px] sm:text-[16px] text-[#999] mt-4 text-center">

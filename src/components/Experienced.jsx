@@ -466,7 +466,7 @@ export default function Experienced() {
           </div>
           <p className="fade-in text-center text-[16px] sm:text-[18px] text-[#4d4d4d] leading-[2] max-w-[700px] mx-auto mb-10">
             営業代行を使ったことがある方なら、一度は感じたことがあるはず。
-            <br />
+            <br className="hidden sm:inline" />
             テレモは、これらすべてを解決するために設計されました。
           </p>
 
@@ -496,10 +496,7 @@ export default function Experienced() {
 
                   {/* タイトル */}
                   <div className="flex-1 flex items-center px-5 sm:px-7 py-5">
-                    <h3
-                      className="text-[20px] sm:text-[26px] lg:text-[30px] font-black leading-[1.3]"
-                      style={{ whiteSpace: 'pre-line' }}
-                    >
+                    <h3 className="text-[20px] sm:text-[26px] lg:text-[30px] font-black leading-[1.3] whitespace-normal sm:whitespace-pre-line">
                       {p.label}
                     </h3>
                   </div>
@@ -545,11 +542,8 @@ export default function Experienced() {
 
                     <div className="relative pl-2 sm:pl-4">
                       <p
-                        className="text-[16px] sm:text-[18px] lg:text-[19px] text-black leading-[2.05] font-medium"
-                        style={{
-                          fontFamily: '"Noto Serif JP", serif',
-                          whiteSpace: 'pre-line',
-                        }}
+                        className="text-[16px] sm:text-[18px] lg:text-[19px] text-black leading-[2.05] font-medium whitespace-normal sm:whitespace-pre-line"
+                        style={{ fontFamily: '"Noto Serif JP", serif' }}
                       >
                         {p.detail}
                       </p>
@@ -636,8 +630,8 @@ export default function Experienced() {
           <h3 className="text-[22px] sm:text-[28px] lg:text-[32px] font-bold text-[#666] leading-[1.3] tracking-[0.02em]">
             全部、よくある話です。
           </h3>
-          <p className="text-[32px] sm:text-[48px] lg:text-[56px] font-black text-black leading-[1.3] tracking-[0.02em] mt-5">
-            だから私たちは<br />
+          <p className="text-[28px] sm:text-[48px] lg:text-[56px] font-black text-black leading-[1.3] tracking-[0.02em] mt-5">
+            だから私たちは<br className="hidden sm:inline" />
             <span className="text-[#f55f00]">すべてを逆に設計しました</span>
           </p>
         </div>

@@ -20,14 +20,14 @@ export default function ConsultationCTA() {
             </p>
             <h2 className="fade-in text-[28px] sm:text-[36px] lg:text-[42px] font-black text-white leading-[1.3] mb-5">
               まずは10〜15分だけ、
-              <br />
+              <br className="hidden sm:inline" />
               話しませんか？
             </h2>
             <p className="fade-in text-[15px] sm:text-[17px] text-white/70 leading-[1.8] mb-8">
               売り込みは一切しません。
-              <br />
+              <br className="hidden sm:inline" />
               貴社の現状をお聞きして、テレモが合うかどうかを正直にお伝えします。
-              <br />
+              <br className="hidden sm:inline" />
               合わなければ、それでOKです。
             </p>
             <div className="fade-in flex flex-col sm:flex-row gap-4">
